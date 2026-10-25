@@ -79,7 +79,7 @@ class PaperStage:
         cloud_only()
         from PIL import Image
         self.Image=Image
-        self.room=Image.open(ASSETS/'room.png').convert('RGBA').resize((W,H),Image.Resampling.LANCZOS)
+        self.room=Image.open(ASSETS/'room-clear.png').convert('RGBA').resize((W,H),Image.Resampling.LANCZOS)
         atlas=Image.open(ASSETS/'puppet-atlas.png').convert('RGBA')
         if atlas.getchannel('A').getextrema()[0]!=0:
             raise ValueError('Puppet atlas must have actual transparency')
@@ -172,7 +172,7 @@ class PaperStage:
                 foot=(x+side*19+31*math.sin(phase),y+473-17*max(0,math.cos(phase)))
             else:
                 foot=(x+side*40,y+473)
-            knee,ankle=ik(hip,foot,123,123,bend=side)
+            knee,ankle=ik(hip,foot,123,123,bend=-side)
             self.segment(canvas,10,hip,knee,18)
             self.segment(canvas,11,knee,ankle,16)
             self.paste(canvas,13,(ankle[0]+7,ankle[1]+6),63,25,flip=side<0)
@@ -262,7 +262,7 @@ def main():
         'video_sha256':digest(video),'audio':'none — visual movement study only',
         'motion':['two-bone arm/leg joints','foot lift and walking cycle','three hero expressions',
                   'guilty friend reaction','separate console and banknotes','four camera cuts'],
-        'assets':{f:digest(ASSETS/f) for f in ['room.png','puppet-atlas.png']}})
+        'assets':{f:digest(ASSETS/f) for f in ['room-clear.png','puppet-atlas.png']}})
     gh=GitHub()
     tag=f'paper-motion-{os.environ["GITHUB_RUN_ID"]}-{os.environ["GITHUB_RUN_ATTEMPT"]}'
     release=gh.draft(tag,'StickTwist — style 5 / 8-second movement test',
@@ -281,5 +281,7 @@ def main():
 
 if __name__=='__main__':
     main()
+
+
 
 
