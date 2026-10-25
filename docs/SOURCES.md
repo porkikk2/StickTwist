@@ -18,3 +18,9 @@ Verified 25 October 2026. Provider documents may change.
 - API project upload restrictions: https://developers.google.com/youtube/v3/revision_history
 
 All visual geometry and launch scripts were created for this project. No claim that generated stories have never coincidentally resembled any existing work. The PS5 reference is fictional narrative use; no PlayStation artwork, logo, game footage or affiliation is included. Voice licensing and engine licensing are distinct. Keep dependency licenses if redistributing dependencies. No third-party soundtrack is included.
+
+## New voice auditions and sound design
+
+Kokoro-82M model/weights: Apache-2.0, downloaded into the ephemeral standard cloud CPU runner only; no paid inference endpoint. Model card: https://huggingface.co/hexgrad/Kokoro-82M . Voice catalog: https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md . Library: https://github.com/hexgrad/kokoro . Audition candidates am_michael, bm_george, af_heart are not yet owner-approved production voices.
+
+Demo music is generated from procedural note sequences in sticktwist/audio_auditions.py. Demo effects are synthesized noise/tone envelopes. No sampled song or outside sound-effect recording is embedded. Keep the audio manifest as provenance. No claim of guaranteed immunity from automated platform matching systems.
