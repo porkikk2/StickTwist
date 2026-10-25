@@ -1,0 +1,159 @@
+[
+  {
+    "id": "sold-memory",
+    "title": "I Sold My Worst Memory. Then I Wanted It Back.",
+    "hook": "I sold the worst memory of my life. The next morning, I couldn't remember why I loved my mother.",
+    "premise_uk": "Герой продає болючий спогад, щоб позбутися горя, і разом із ним втрачає частину близькості до матері.",
+    "central_choice_uk": "Повернути біль або зберегти комфортне життя без важливої частини себе.",
+    "planted_clue_uk": "Раніше він не може пояснити, чому щодня ставить друге горнятко на стіл.",
+    "ending_uk": "Він викуповує спогад: це був останній вечір з мамою. Біль був ціною любові, а не помилкою.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "bedroom",
+      "memory-shop",
+      "kitchen"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "chat-voted-me-out",
+    "title": "The Group Chat Voted Me Out of Real Life",
+    "hook": "My friends voted me out of the group chat. Then my own mother couldn't see me.",
+    "premise_uk": "Звичайне голосування робить людину невидимою для всіх; герой зустрічає тих, кого виключили раніше.",
+    "central_choice_uk": "Повернути собі місце, виключивши когось іншого, або зламати саму систему.",
+    "planted_clue_uk": "Ще до голосування один стілець у класі завжди порожній, хоча на ньому лежить чужий рюкзак.",
+    "ending_uk": "Герой відмовляється назвати наступну жертву й разом із забутими учасниками забирає голоси в адміністратора. Він повертає не лише себе.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "classroom",
+      "bedroom",
+      "empty-corridor"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "clone-better-than-me",
+    "title": "My Clone Was Better at Being Me",
+    "hook": "I hired a clone to do my boring jobs. Three days later, my best friend asked if the original could stop coming.",
+    "premise_uk": "Двійник чудово замінює героя у повсякденному житті. Люди починають надавати перевагу копії.",
+    "central_choice_uk": "Прибрати двійника або почути, що він робить краще.",
+    "planted_clue_uk": "Копія перестає говорити щоразу, коли починає говорити хтось інший.",
+    "ending_uk": "Річ не в ідеальному обличчі чи здібностях: копія навчилася слухати. Герой вперше залишається поруч і дає другові договорити.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "bedroom",
+      "classroom",
+      "cafe"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "pause-time-hear-me",
+    "title": "I Could Pause Time. Everyone Could Still Hear Me.",
+    "hook": "I paused time during my presentation. Then I said exactly what I thought of everyone.",
+    "premise_uk": "Герой зупиняє рух, але помилково вважає, що ніхто не чує його слів.",
+    "central_choice_uk": "Спробувати приховати сказане або прямо перепросити.",
+    "planted_clue_uk": "На зупиненому телефоні продовжує рухатися індикатор запису звуку.",
+    "ending_uk": "Коли час повертається, клас мовчить. Герой чекає покарання, а вчитель каже: «That was finally an honest presentation.» Далі герой визнає образливі слова, а не отримує безкоштовну індульгенцію.",
+    "formats": [
+      "short"
+    ],
+    "sets": [
+      "classroom"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "future-receipt",
+    "title": "I Got a Receipt for a Day I Had Not Lived Yet",
+    "hook": "The receipt listed everything I would buy tomorrow. The last item was one more minute with my dad.",
+    "premise_uk": "Чек передбачає покупки наступного дня й одну незрозумілу, набагато ціннішу річ.",
+    "central_choice_uk": "Гнатися за передбаченням чи змінити запланований день заради близької людини.",
+    "planted_clue_uk": "Телефон батька двічі з’являється як пропущений дзвінок ще до останнього рядка чека.",
+    "ending_uk": "Герой не чекає магічного фіналу: сам телефонує й приїздить до батька. Останній рядок чека зникає, коли вони перестають рахувати час.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "shop",
+      "bus-stop",
+      "kitchen"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "paid-betrayal",
+    "title": "My Best Friend Was Paid to Betray Me",
+    "hook": "I found a price list for my secrets. My best friend had already sold the cheapest one.",
+    "premise_uk": "Герой знаходить докази продажу власних секретів; дружба й реальна потреба в грошах вступають у конфлікт.",
+    "central_choice_uk": "Помститися публічно чи встановити межу, не перетворюючись на продавця чужого болю.",
+    "planted_clue_uk": "Одна особиста історія в списку перекреслена навіть попри найвищу ціну.",
+    "ending_uk": "Друг відмовився продавати найболючіший секрет, але вже зрадив довіру іншими. Герой визнає обидва факти й не відновлює дружбу за одну красиву промову.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "bedroom",
+      "cafe",
+      "corridor"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "truth-door",
+    "title": "The Door Only Opened When I Told the Truth",
+    "hook": "Every door opened when I told the truth. The final door asked why I had stopped calling my brother.",
+    "premise_uk": "Кімнати ставлять особисті запитання; стандартні виправдання перестають відкривати двері.",
+    "central_choice_uk": "Зберегти зручну версію минулого чи визнати власну провину.",
+    "planted_clue_uk": "Ключі весь час лежать у кишені, але герой намагається використати чужі відповіді.",
+    "ending_uk": "Останній замок зникає не після правильної фрази, а після справжнього дзвінка братові. Примирення тільки починається, не вирішує все за секунду.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "door-room",
+      "hallway",
+      "bedroom"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  },
+  {
+    "id": "future-told-lose",
+    "title": "My Future Self Told Me to Lose",
+    "hook": "My future self sent me one instruction before the final: lose. I had trained for this moment for six years.",
+    "premise_uk": "Попередження суперечить головній мрії героя; що ближче фінал, то менше він довіряє відправнику.",
+    "central_choice_uk": "Сліпо виконати пророцтво чи самостійно вирішити, якою людиною він хоче бути.",
+    "planted_clue_uk": "На фото з майбутнього трофей цілий, але поруч немає друга, з яким герой тренувався.",
+    "ending_uk": "Під час фіналу герой зупиняється допомогти супернику й програє час. Він не слухається магічного наказу заради нагороди: він сам обирає вчинок, про який не шкодує.",
+    "formats": [
+      "short",
+      "long"
+    ],
+    "sets": [
+      "training-room",
+      "competition-floor",
+      "bedroom"
+    ],
+    "fiction": true,
+    "status": "pitch_for_owner_selection"
+  }
+]

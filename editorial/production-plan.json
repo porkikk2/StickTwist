@@ -1,0 +1,40 @@
+{
+  "style": "paper-cutout",
+  "style_owner_approved": true,
+  "voice_owner_approved": false,
+  "music_owner_approved": false,
+  "stories_owner_approved": false,
+  "budget_gbp": 0,
+  "publishing": "explicit_owner_approval_per_exact_bundle",
+  "formats": {
+    "short": {
+      "width": 1080,
+      "height": 1920,
+      "min_seconds": 35,
+      "max_seconds": 60,
+      "target_words": [
+        90,
+        140
+      ],
+      "story": "complete miniature with its own ending"
+    },
+    "long": {
+      "width": 1920,
+      "height": 1080,
+      "min_seconds": 300,
+      "max_seconds": 480,
+      "target_words": [
+        700,
+        1100
+      ],
+      "story": "full independent story, 5-7 chapters, original widescreen staging"
+    }
+  },
+  "proposed_cadence": {
+    "shorts_per_week": 5,
+    "long_videos_per_two_weeks": 1
+  },
+  "cadence_status": "planning_target_not_enabled_schedule",
+  "new_full_video_renderer_status": "not_integrated_yet_pending_voice_and_story_selection",
+  "legacy_scheduled_generation": "disabled_unless_LEGACY_RENDER_ENABLED_true"
+}
