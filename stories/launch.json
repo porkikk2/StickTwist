@@ -1,0 +1,252 @@
+[
+  {
+    "id": "my-best-friend-sold-my-ps5",
+    "title": "My Best Friend Sold My PS5",
+    "language": "en",
+    "fiction": true,
+    "beats": [
+      {
+        "text": "My best friend sold my PlayStation five for two hundred dollars. He said I should thank him.",
+        "label": "HE SOLD MY PS5",
+        "prop": "console",
+        "scene": "shock"
+      },
+      {
+        "text": "I came home to cables hanging from an empty shelf. Ryan was counting money on my couch.",
+        "label": "EMPTY. SHELF.",
+        "prop": "cash",
+        "scene": "room"
+      },
+      {
+        "text": "He said we needed cash for his birthday trip. Apparently, my console was our emergency fund.",
+        "label": "HIS BIRTHDAY TRIP",
+        "prop": "phone",
+        "scene": "phone"
+      },
+      {
+        "text": "I messaged the buyer. Before I could explain, he sent a photo of the console and one question.",
+        "label": "THE BUYER MESSAGED ME",
+        "prop": "phone",
+        "scene": "deal"
+      },
+      {
+        "text": "Why does this have a broken sticker? I zoomed in. That was the empty display shell from my repair project.",
+        "label": "WAIT. ZOOM IN.",
+        "prop": "note",
+        "scene": "receipt"
+      },
+      {
+        "text": "My real console was at my brother's place. I told the buyer the truth. Ryan had to return every dollar.",
+        "label": "AN EMPTY DISPLAY SHELL",
+        "prop": "console",
+        "scene": "reveal"
+      },
+      {
+        "text": "Then Ryan asked if the trip was still happening. I said yes. The buyer was taking him to the refund machine.",
+        "label": "TRIP TO THE REFUND MACHINE",
+        "prop": "cash",
+        "scene": "ending"
+      }
+    ]
+  },
+  {
+    "id": "roommate-charged-me-for-my-own-wifi",
+    "title": "My Roommate Charged Me for My Own WiFi",
+    "language": "en",
+    "fiction": true,
+    "beats": [
+      {
+        "text": "My roommate charged me twenty dollars to use the WiFi. There was one tiny problem with his business plan.",
+        "label": "PAY TO CONNECT?",
+        "prop": "phone",
+        "scene": "shock"
+      },
+      {
+        "text": "The router was mine. The internet account was mine. Even the little table under the router was mine.",
+        "label": "ALL OF IT WAS MINE",
+        "prop": "box",
+        "scene": "room"
+      },
+      {
+        "text": "He said the fee covered network management. His entire job was telling guests to restart their phones.",
+        "label": "NETWORK MANAGER",
+        "prop": "phone",
+        "scene": "phone"
+      },
+      {
+        "text": "So I asked for an invoice. He made one in thirty seconds and added a five dollar administration fee.",
+        "label": "AN EXTRA FIVE DOLLARS",
+        "prop": "note",
+        "scene": "deal"
+      },
+      {
+        "text": "I opened my provider account and paused his device. He immediately asked why the internet had stopped working.",
+        "label": "DEVICE PAUSED",
+        "prop": "phone",
+        "scene": "receipt"
+      },
+      {
+        "text": "I told him to contact his network manager. For the first time all week, he had absolutely nothing to say.",
+        "label": "CONTACT YOUR MANAGER",
+        "prop": "phone",
+        "scene": "reveal"
+      },
+      {
+        "text": "He refunded the money. I restored his connection and renamed the network: administration fee not included.",
+        "label": "REFUND COMPLETE",
+        "prop": "cash",
+        "scene": "ending"
+      }
+    ]
+  },
+  {
+    "id": "brother-sold-my-concert-ticket",
+    "title": "My Brother Sold My Concert Ticket",
+    "language": "en",
+    "fiction": true,
+    "beats": [
+      {
+        "text": "My brother sold my concert ticket and told me the show was canceled. Then he forgot to hide his story.",
+        "label": "SHOW CANCELED?",
+        "prop": "ticket",
+        "scene": "shock"
+      },
+      {
+        "text": "There he was, posting a photo outside the venue. His caption said best night ever. Very convincing cancellation.",
+        "label": "BEST NIGHT EVER",
+        "prop": "phone",
+        "scene": "room"
+      },
+      {
+        "text": "I called him. He said the ticket would have gone to waste because I always arrived late anyway.",
+        "label": "HIS EXCUSE",
+        "prop": "phone",
+        "scene": "phone"
+      },
+      {
+        "text": "Then his buyer messaged me. My name was still on the ticket, and the transfer had never been completed.",
+        "label": "TRANSFER INCOMPLETE",
+        "prop": "ticket",
+        "scene": "deal"
+      },
+      {
+        "text": "I explained what happened. The buyer asked my brother for a refund. I took back the unfinished transfer.",
+        "label": "THE ACTUAL OWNER",
+        "prop": "note",
+        "scene": "receipt"
+      },
+      {
+        "text": "I went to the concert with my friend. My brother stayed outside, arguing about a service fee he had invented.",
+        "label": "GUESS WHO GOT IN",
+        "prop": "ticket",
+        "scene": "reveal"
+      },
+      {
+        "text": "After the show, he asked for a ride home. I told him my taxi service had been canceled.",
+        "label": "SERVICE CANCELED",
+        "prop": "key",
+        "scene": "ending"
+      }
+    ]
+  },
+  {
+    "id": "neighbor-returned-an-empty-box",
+    "title": "My Neighbor Returned an Empty Box",
+    "language": "en",
+    "fiction": true,
+    "beats": [
+      {
+        "text": "My neighbor returned the drill I lent him. The box was suspiciously light. He said that was a premium feature.",
+        "label": "PREMIUM AIR?",
+        "prop": "box",
+        "scene": "shock"
+      },
+      {
+        "text": "I opened it right in front of him. Inside were a receipt, a screwdriver, and absolutely no drill.",
+        "label": "ONE THING MISSING",
+        "prop": "note",
+        "scene": "room"
+      },
+      {
+        "text": "He said he must have mixed up the boxes. Then his phone rang. The screen said drill buyer.",
+        "label": "DRILL BUYER CALLING",
+        "prop": "phone",
+        "scene": "phone"
+      },
+      {
+        "text": "We stood there listening to the ringtone. He slowly turned the phone over as if that would erase my eyesight.",
+        "label": "AWKWARD SILENCE",
+        "prop": "phone",
+        "scene": "deal"
+      },
+      {
+        "text": "I asked him to call the buyer back. On speaker. The buyer had not collected it yet and agreed to cancel.",
+        "label": "PUT IT ON SPEAKER",
+        "prop": "phone",
+        "scene": "receipt"
+      },
+      {
+        "text": "Ten minutes later, my drill came back from his garage. Apparently, that was where premium air was manufactured.",
+        "label": "FOUND IN HIS GARAGE",
+        "prop": "box",
+        "scene": "reveal"
+      },
+      {
+        "text": "He asked to borrow it next week. I handed him the screwdriver. That one was already in the box.",
+        "label": "BORROWING DOWNGRADED",
+        "prop": "box",
+        "scene": "ending"
+      }
+    ]
+  },
+  {
+    "id": "friend-faked-a-surprise-party",
+    "title": "My Friend Faked a Surprise Party",
+    "language": "en",
+    "fiction": true,
+    "beats": [
+      {
+        "text": "My friend collected money for my surprise birthday party. The surprise was that nobody had booked a party.",
+        "label": "SURPRISE: NO PARTY",
+        "prop": "cash",
+        "scene": "shock"
+      },
+      {
+        "text": "Six friends showed up at an empty cafe. The owner looked at our balloons and asked who we were.",
+        "label": "NO RESERVATION",
+        "prop": "box",
+        "scene": "room"
+      },
+      {
+        "text": "Our organizer said the booking system had crashed. Unfortunately for him, the owner was holding the paper booking diary.",
+        "label": "A PAPER SYSTEM",
+        "prop": "note",
+        "scene": "phone"
+      },
+      {
+        "text": "I asked where our money went. He said decorations. We counted two balloons and a napkin that said happy Tuesday.",
+        "label": "HAPPY TUESDAY?",
+        "prop": "note",
+        "scene": "deal"
+      },
+      {
+        "text": "Then his delivery arrived. Brand new headphones. He had accidentally used the cafe address when placing the order.",
+        "label": "SPECIAL DELIVERY",
+        "prop": "box",
+        "scene": "receipt"
+      },
+      {
+        "text": "He refunded everyone and canceled his order. The owner let us push two tables together and brought out a cake.",
+        "label": "AN ACTUAL PARTY",
+        "prop": "cash",
+        "scene": "reveal"
+      },
+      {
+        "text": "We still gave him a party job. He had to blow up every balloon. No budget required. Just hot air.",
+        "label": "FINALLY, HIS SPECIALTY",
+        "prop": "box",
+        "scene": "ending"
+      }
+    ]
+  }
+]
