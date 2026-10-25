@@ -11,6 +11,7 @@ def main():
     tag = f'preview-{queue["week"]}-{os.environ["GITHUB_RUN_ID"]}-{os.environ["GITHUB_RUN_ATTEMPT"]}'
     notes = ['# StickTwist — owner review only', '',
              'UNPUBLISHED DRAFT. Do not publish this release: videos have not been approved.',
+             f'Preview tag for the approval form: `{tag}`',
              'Download each ZIP, watch video.mp4, inspect captions.srt, review.jpg and metadata.json.',
              'No YouTube upload has happened. Suggested slots are editorial suggestions only.', '',
              '| Episode | Bundle SHA256 |', '|---|---|']
@@ -35,3 +36,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
