@@ -107,15 +107,34 @@ def main():
     torch.set_num_threads(2)
     out=Path('build/audio-auditions');out.mkdir(parents=True,exist_ok=True)
     model=KModel(repo_id='hexgrad/Kokoro-82M').to('cpu').eval()
-    pipelines={code:KPipeline(lang_code=code,repo_id='hexgrad/Kokoro-82M',model=model) for code in ['a','b']}
+    phonemizer_mode='misaki-english'
+    try:
+        pipelines={code:KPipeline(lang_code=code,repo_id='hexgrad/Kokoro-82M',model=model) for code in ['a','b']}
+    except OverflowError:
+        # Documented Kokoro direct phoneme input preserves the same neural model/voice.
+        pipelines=None
+        phonemizer_mode='misaki-espeak-english-fallback'
+        from misaki.espeak import EspeakFallback
+        english={code:EspeakFallback(british=code=='b') for code in ['a','b']}
+        print('Using direct phoneme input after spaCy tokenizer overflow')
     manifest={'script':DEMO_TEXT,'model':'hexgrad/Kokoro-82M','model_license':'Apache-2.0',
               'source':'https://huggingface.co/hexgrad/Kokoro-82M','sample_rate':SR,
-              'source_commit':os.environ['GITHUB_SHA'],'voices':[],'files':{}}
+              'source_commit':os.environ['GITHUB_SHA'],'phonemizer':phonemizer_mode,'voices':[],'files':{}}
     for label,code,voice,speed in VOICES:
         parts=[]
-        for gs,ps,audio in pipelines[code](DEMO_TEXT,voice=voice,speed=speed,split_pattern=r'\n+'):
-            if audio is not None:
-                parts.append(audio.detach().cpu().numpy() if hasattr(audio,'detach') else np.asarray(audio))
+        if pipelines is not None:
+            for gs,ps,audio in pipelines[code](DEMO_TEXT,voice=voice,speed=speed,split_pattern=r'\n+'):
+                if audio is not None:
+                    parts.append(audio.detach().cpu().numpy() if hasattr(audio,'detach') else np.asarray(audio))
+        else:
+            from types import SimpleNamespace
+            from huggingface_hub import hf_hub_download
+            ps,_=english[code](SimpleNamespace(text=DEMO_TEXT))
+            if not ps or len(ps)>510:
+                raise RuntimeError('Invalid direct phoneme length; no text may be truncated')
+            pack=torch.load(hf_hub_download(repo_id='hexgrad/Kokoro-82M',filename=f'voices/{voice}.pt'),map_location='cpu',weights_only=True)
+            audio=model(ps,pack[len(ps)-1],speed)
+            parts.append(audio.detach().cpu().numpy())
         if not parts:
             raise RuntimeError('TTS produced no audio')
         audio=np.concatenate(parts)
