@@ -29,9 +29,10 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng libsndfile1
           python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install kokoro==0.9.4 soundfile==0.13.1 numpy==2.2.6 transformers==4.51.3 spacy==3.8.7
+          python -m pip install kokoro==0.9.4 soundfile==0.13.1 numpy==2.2.6 transformers==4.51.3 spacy==3.8.7 typer==0.15.4 click==8.1.8
       - name: Synthesize voices, original music and effects; verify and store unpublished samples
         env:
           GH_TOKEN: ${{ github.token }}
         run: python -m sticktwist.audio_auditions
+
 
