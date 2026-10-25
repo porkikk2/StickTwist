@@ -1,0 +1,20 @@
+test_another_actor_cannot_approve (test_pipeline.PipelineTests.test_another_actor_cannot_approve) ... ok
+test_approval_cannot_change_video_or_visibility (test_pipeline.PipelineTests.test_approval_cannot_change_video_or_visibility) ... ok
+test_captions_are_contiguous_complete_and_within_speech (test_pipeline.PipelineTests.test_captions_are_contiguous_complete_and_within_speech) ... ok
+test_entire_story_bank_is_valid_unique_english_fiction (test_pipeline.PipelineTests.test_entire_story_bank_is_valid_unique_english_fiction) ... ok
+test_first_story_is_requested_ps5_story (test_pipeline.PipelineTests.test_first_story_is_requested_ps5_story) ... ok
+test_local_media_processing_is_rejected (test_pipeline.PipelineTests.test_local_media_processing_is_rejected) ... ok
+test_london_summer_slot_keeps_local_time (test_pipeline.PipelineTests.test_london_summer_slot_keeps_local_time) ... ok
+test_manifest_detects_modified_metadata (test_pipeline.PipelineTests.test_manifest_detects_modified_metadata) ... ok
+test_next_week_does_not_recycle (test_pipeline.PipelineTests.test_next_week_does_not_recycle) ... ok
+test_owner_exact_approval_succeeds (test_pipeline.PipelineTests.test_owner_exact_approval_succeeds) ... ok
+test_queue_has_five_unique_stories_and_never_auto_publishes (test_pipeline.PipelineTests.test_queue_has_five_unique_stories_and_never_auto_publishes) ... ok
+test_rerun_same_week_is_idempotent (test_pipeline.PipelineTests.test_rerun_same_week_is_idempotent) ... ok
+test_self_hosted_runner_is_rejected (test_pipeline.PipelineTests.test_self_hosted_runner_is_rejected) ... ok
+test_story_bank_exhaustion_fails_without_partial_state (test_pipeline.PipelineTests.test_story_bank_exhaustion_fails_without_partial_state) ... ok
+test_unsafe_zip_and_wrong_bundle_are_rejected (test_pipeline.PipelineTests.test_unsafe_zip_and_wrong_bundle_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.100s
+
+OK
