@@ -1,5 +1,7 @@
 # StickTwist
 
+**Production update:** paper-cutout style 5 is approved. Voice/sound auditions and new story pitches are in preparation; both Shorts and 5–8-minute widescreen stories are planned. See [new direction](editorial/DIRECTION.uk.md). Legacy scheduled rendering is paused unless `LEGACY_RENDER_ENABLED=true`. The full paper-style renderer for both formats is not integrated yet; the approved visual proof is the eight-second motion test.
+
 Original English fictional stories, animated with procedural 2D stickmen. Cloud-only rendering, a five-story weekly queue, and explicit owner approval before every YouTube upload.
 
 **Channel:** StickTwist · preferred handle `@StickTwist` (availability not verified).  
@@ -13,7 +15,7 @@ Original English fictional stories, animated with procedural 2D stickmen. Cloud-
 - Scripts come from an offline deterministic story grammar plus five authored launch stories. This is not an LLM. The launch bank contains 29 distinct scripts; many later scripts share a structure. Owner editorial review is mandatory. After five complete weekly batches the remaining four are held; generation stops until more original stories are added. It never quietly recycles scripts.
 - Provider limits/terms can change. Stop workflows if free service ceases; never enable a paid fallback. No GitHub billing settings are modified by this project.
 
-## Weekly operation
+## Weekly operation — legacy prototype, currently paused
 
 Actions → **Build review videos** runs Sundays at 06:15 UTC. It prepares the coming Monday's queue and renders five videos sequentially. GitHub schedules may be delayed and can be disabled after prolonged repository inactivity. Manual dispatch is available.
 
@@ -49,3 +51,4 @@ python -m compileall -q sticktwist
 These checks handle text and small synthetic integrity fixtures only; they do not render video or synthesize speech. The renderer rejects local and self-hosted environments. Install full media requirements only in GitHub Actions. Rendering code checks the cloud guard before importing Pillow/Piper.
 
 See [launch scripts](stories/launch.json), [source notes](docs/SOURCES.md), and [YouTube setup](docs/YOUTUBE_SETUP.md). No credentials belong in source control, issues, logs or chat.
+
