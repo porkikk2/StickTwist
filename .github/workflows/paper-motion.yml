@@ -1,0 +1,32 @@
+name: Paper cutout motion test
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sticktwist-paper-motion
+  cancel-in-progress: false
+jobs:
+  paper-test:
+    if: >-
+      github.actor == github.repository_owner &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.visibility == 'public'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Check motion rig without rendering
+        run: python -m unittest discover -s tests -v
+      - name: Install free tools on this cloud runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-dejavu-core
+          python -m pip install Pillow==11.3.0
+      - name: Render eight seconds and verify in cloud, then store unpublished preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m sticktwist.paper_motion
