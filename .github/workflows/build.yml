@@ -24,7 +24,8 @@ jobs:
     if: >-
       github.event.repository.visibility == 'public' &&
       github.ref == 'refs/heads/main' &&
-      (github.event_name == 'schedule' || github.actor == github.repository_owner)
+      ((github.event_name == 'schedule' && vars.LEGACY_RENDER_ENABLED == 'true') ||
+       (github.event_name == 'workflow_dispatch' && github.actor == github.repository_owner))
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     env:
@@ -64,3 +65,4 @@ jobs:
         run: python -m sticktwist.render --limit "$REQUESTED_COUNT"
       - name: Save unpublished review draft without Actions artifact storage
         run: python -m sticktwist.store_preview
+

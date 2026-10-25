@@ -1,0 +1,37 @@
+name: Voice music and SFX auditions
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sticktwist-audio-auditions
+  cancel-in-progress: false
+jobs:
+  audition:
+    if: >-
+      github.actor == github.repository_owner &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.visibility == 'public'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      PIP_NO_CACHE_DIR: '1'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -v
+      - name: Install free CPU audio tools in cloud
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng libsndfile1
+          python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install kokoro==0.9.4 soundfile==0.13.1 numpy==2.2.6 transformers==4.51.3 spacy==3.8.7
+      - name: Synthesize voices, original music and effects; verify and store unpublished samples
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m sticktwist.audio_auditions
+
