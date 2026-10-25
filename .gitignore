@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+models/
+client_secret*.json
+token*.json
+.env
+*.onnx
+*.wav
+*.mp4
+*.zip
