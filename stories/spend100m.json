@@ -1,0 +1,121 @@
+{
+  "id": "spend-100m-in-one-day",
+  "title": "Spend $100 Million in 24 Hours. Keep Nothing.",
+  "fiction": true,
+  "language": "en",
+  "voice": "am_michael",
+  "voice_owner_approved": true,
+  "premise_owner_selected": true,
+  "finished_script_owner_approved": false,
+  "rules": {
+    "budget_dollars": 100000000,
+    "reward_dollars": 1000000000,
+    "hours": 24,
+    "no_gifts_or_donations": true,
+    "no_challenge_funded_possessions_retained": true,
+    "rentals_must_end_before_deadline": true,
+    "refundable_deposits_do_not_count": true,
+    "deliberate_destruction_does_not_count": true,
+    "consumed_food_and_drink_allowed": true,
+    "existing_possessions_exempt": true,
+    "reward_only_after_challenge_judged": true
+  },
+  "pricing_note": "All prices and the challenge are invented for this fictional story; these are not real-world quotations.",
+  "spending_ledger": [
+    {
+      "item": "Same-day charter fleet, crews and flights",
+      "dollars": 28000000
+    },
+    {
+      "item": "Same-day advertising airtime, all placements end before midnight",
+      "dollars": 36000000
+    },
+    {
+      "item": "One-night arena rental and operating crews",
+      "dollars": 24000000
+    },
+    {
+      "item": "Private live stunt-and-orchestra experience",
+      "dollars": 11999997
+    },
+    {
+      "item": "Dine-in coffee, cafe-owned mug returned",
+      "dollars": 3
+    }
+  ],
+  "short": {
+    "beats": [
+      {
+        "title": "The offer",
+        "text": "They gave me one hundred million dollars to spend before midnight. Finish it, and I'd get a billion. But no gifts. And nothing I bought could stay mine.",
+        "scene": "contract"
+      },
+      {
+        "title": "Wrong purchases",
+        "text": "A mansion? Disqualified. A supercar? Same problem. I needed things I could use without keeping.",
+        "scene": "rejected-assets"
+      },
+      {
+        "title": "Buy the day",
+        "text": "So I paid for jet charters, advertising time, an arena, and a private stunt show. Every rental ended before midnight.",
+        "scene": "services"
+      },
+      {
+        "title": "Three dollars",
+        "text": "At eleven fifty-nine, I had three dollars left. A coffee would finish it. Then the barista reached for a paper cup.",
+        "scene": "cafe"
+      },
+      {
+        "title": "The trap",
+        "text": "The judge stopped me. I'd own that cup. I was about to lose a billion dollars over cardboard.",
+        "scene": "cup"
+      },
+      {
+        "title": "The choice",
+        "text": "Make it dine-in. I drank from the cafe's mug, then returned it. Midnight. Zero dollars. Zero possessions. One billion dollars. And no cup.",
+        "scene": "win"
+      }
+    ],
+    "word_count": 125
+  },
+  "long": {
+    "chapters": [
+      {
+        "title": "The most expensive cup in the world",
+        "text": "At eleven fifty-nine, I had three dollars left and a paper cup between me and a billion dollars. The barista reached for it. A voice in my earpiece said, \"Careful. That becomes yours.\" I had spent almost a hundred million dollars that day. Apparently, the thing that could ruin me was a piece of cardboard.\n\nTwenty-four hours earlier, a man in an orange jacket had walked into my apartment and placed a phone on the table. On its screen was a balance: one hundred million dollars. He said that if I spent every dollar before the following midnight, I would receive one billion. If I failed, everything would be reversed and I would receive nothing. I laughed. He did not. Then he showed me the rules.",
+        "scene": "contract"
+      },
+      {
+        "title": "The rules change everything",
+        "text": "I could not give money or purchases away. No gifts, no donations, and no fake payments to friends. Anything I acquired with the challenge money had to be gone from my ownership by midnight. My old clothes and phone were fine. New possessions were not. Food and drinks were allowed if I consumed them. Renting was allowed, but the rental had to end before the deadline. Refundable deposits did not count as spending. Buying things just to destroy them did not count either.\n\nI immediately opened a property listing. The man tapped the word ownership. I tried a supercar. Same answer. Jewelry? Still an object. I asked whether I could buy a car and leave it somewhere. He asked whether I wanted to lose before breakfast.\n\nThat was when I understood the actual problem. Spending money was easy. Spending a hundred million dollars without keeping anything was going to require a completely different kind of shopping.",
+        "scene": "rejected-assets"
+      },
+      {
+        "title": "Nothing to take home",
+        "text": "I stopped looking at things for sale and started looking at things I could experience. A charter company had aircraft, crews, positioning flights, and private routes available for a single day. I booked the package. Twenty-eight million dollars. Every aircraft would remain theirs. Every flight would finish before the deadline. For the first time, the judge's screen turned green.\n\nI flew over the coast in a cabin large enough to make my apartment look like a cupboard. The crew asked where I wanted to go. I kept checking the balance instead of the view. Seventy-two million dollars remained.\n\nWhen we landed, someone offered me a little souvenir from the flight. I almost accepted it. The judge cleared his throat. I put it back. Apparently, becoming temporarily rich had not made me any better at reading the rules.",
+        "scene": "jets"
+      },
+      {
+        "title": "An audience of one",
+        "text": "Next, I found the biggest same-day advertising package still available. Digital billboards, broadcasts, and timed screen placements in cities I had never visited. Thirty-six million dollars. I bought time, not the screens. Every placement would end before midnight. The message was simple: \"I am having a very expensive day.\"\n\nFor a while, my face was larger than buildings. Strangers took photos of it. I could not decide whether I looked successful or missing. The judge confirmed that I owned none of the screens and received no refundable credit. The balance dropped to thirty-six million.\n\nThen I rented an arena and its operating crew for one night. Twenty-four million dollars, with every rented item returned before the deadline. I walked through a private entrance and stared at thousands of empty seats. I had finally hired somewhere enormous enough to match the size of my problem.",
+        "scene": "billboards-arena"
+      },
+      {
+        "title": "The show I could not keep",
+        "text": "I hired a live stunt-and-orchestra production for the remaining evening. The quoted fee was eleven million, nine hundred and ninety-nine thousand, nine hundred and ninety-seven dollars. The package was available because another client had canceled. For once, someone else's bad planning was useful to me.\n\nI checked every page. The equipment was rented. The performers were paid for real work. There were no take-home props, recordings, merchandise, or future credits included. It was a live experience that would be finished that night. The judge approved it.\n\nCars jumped ramps. An orchestra played while stunt performers fell through scenery that belonged to the venue. I was the entire audience. It was spectacular. It was also strange. Every time something amazing happened, I turned toward the empty seat beside me. There was nobody there to exchange a look with. I had bought the loudest evening of my life and somehow made it feel quiet.",
+        "scene": "show"
+      },
+      {
+        "title": "Three dollars nobody could take",
+        "text": "By eleven fifty, the aircraft had been returned, the advertisements had ended, and the arena crew was checking the last rented items back in. The show was over. I owned no part of it. The judge's screen listed four approved charges and a remaining balance of three dollars.\n\nThree dollars. After all that, I was being defeated by three dollars.\n\nI could not tip someone, because that would be a gift. I could not buy a little souvenir, because I would still own it. The judge offered no suggestions. He just asked whether I had finished enjoying the challenge. I said something that would not have looked good on the billboards.\n\nAcross the street, a small cafe was still open. A sign in the window said coffee: three dollars. For the first time all day, I ran somewhere without checking whether it had a private entrance.",
+        "scene": "cafe"
+      },
+      {
+        "title": "Make it dine-in",
+        "text": "The barista looked at me, looked at the countdown on my phone, and reached for a paper cup. The judge's voice cut in. That cup would become my property. I froze with my hand above the payment terminal. Seven seconds remained.\n\nThen I saw the ceramic mugs behind the counter. I asked for the coffee to stay. Her mug. Her counter. A drink I could finish, instead of an object I would keep. She poured it. I paid three dollars, drank the small coffee, and set her mug back on the counter.\n\nMidnight. The balance read zero. New possessions: zero. The cafe still owned the mug.\n\nA second later, the screen changed to one billion dollars. I waited for another rule. There was not one. The challenge had ended. The man in the orange jacket finally smiled.\n\nThe next morning, I returned to the same cafe. I left my phone in my pocket, ordered one coffee, and sat down. For the first time in a day, I was not trying to finish it.",
+        "scene": "win"
+      }
+    ],
+    "word_count": 1034
+  }
+}
