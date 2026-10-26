@@ -26,6 +26,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Install free CPU audio tools in cloud
         run: |
+          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng libsndfile1
           python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
