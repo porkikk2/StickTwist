@@ -28,6 +28,7 @@ class SpendingStoryTests(unittest.TestCase):
 
     def test_both_formats_have_complete_scripts_without_publication_approval(self):
         validate_story(self.story)
-        self.assertFalse(self.story['finished_script_owner_approved'])
+        self.assertTrue(self.story['finished_script_owner_approved'])
+        self.assertFalse(self.story['publishing_approved'])
         self.assertIn('One billion dollars.',self.story['short']['beats'][-1]['text'])
         self.assertIn('The challenge had ended.',self.story['long']['chapters'][-1]['text'])
