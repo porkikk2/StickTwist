@@ -1,6 +1,6 @@
 # StickTwist
 
-**Production update:** paper-cutout style 5 is approved. Voice option 1 (am_michael) and the Spend $100m in one day premise are owner-selected. Narrated script drafts for Shorts and a 5–8-minute widescreen story are in preparation; music and publication remain unapproved. See [new direction](editorial/DIRECTION.uk.md). Legacy scheduled rendering is paused unless `LEGACY_RENDER_ENABLED=true`. The full paper-style renderer for both formats is not integrated yet; the approved visual proof is the eight-second motion test.
+**Production update:** paper-cutout style 5, voice option 1 (am_michael), and the selected Spend $100m scripts/audio are approved for production. The new cloud renderer supports a 54-second vertical Short and a 6:47 widescreen story. `Spend 100m paper films` first builds static storyboards, then full MP4 owner-review drafts. Captions use native Kokoro token timing estimates. Complete film review and separate approval are still required before any YouTube upload. Legacy scheduled rendering remains paused unless `LEGACY_RENDER_ENABLED=true`.
 
 Original English fictional stories, animated with procedural 2D stickmen. Cloud-only rendering, a five-story weekly queue, and explicit owner approval before every YouTube upload.
 
