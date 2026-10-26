@@ -27,7 +27,7 @@ SHORT_CUTS=[
 LONG_CUTS=[
  [(None,'three'),('The barista','cup'),('I had spent','stop'),('Twenty-four hours earlier','offer'),('On its screen','offer'),('He said','reward'),('I laughed','reaction')],
  [(None,'rules'),('Anything I acquired','rules'),('Food and drinks','mug'),('Renting was allowed','return'),('I immediately','house'),('I tried a supercar','car'),('Jewelry','jewel'),('That was when','idea')],
- [(None,'idea'),('A charter company','jet'),('Twenty-eight million','jet'),('I flew over','flight'),('The crew asked','flight'),('Seventy-two million','balance72'),('When we landed','souvenir'),('The judge cleared','stop')],
+ [(None,'idea'),('A charter company','jet'),('Twenty-eight million','jet'),('I flew over','flight'),('The crew asked','flight'),('Seventy-two million','balance72'),('When we landed','souvenir'),('The judge cleared','stop-souvenir')],
  [(None,'billboard'),('Thirty-six million','billboard'),('The message was simple','ad-message'),('For a while','big-face'),('The judge confirmed','return'),('Then I rented','arena'),('I walked through','arena-empty')],
  [(None,'show-contract'),('The package was available','show-contract'),('I checked every page','return'),('It was a live experience','show'),('Cars jumped ramps','stunt'),('I was the entire audience','arena-empty'),('Every time something','alone'),('I had bought','alone')],
  [(None,'return'),('The judge','three'),('Three dollars','three'),('I could not tip','no-tip'),('I could not buy','souvenir'),('The judge offered','reaction'),('Across the street','cafe'),('For the first time','run')],
@@ -153,7 +153,7 @@ class Film:
             self.rect(image,(w*.60,h*.20,w*.91,h*.48),'#58777a')
             for xx in [.66,.77,.87]:
                 self.rect(image,(w*xx,h*.23,w*xx+8,h*.45),'#e8d8bb')
-            self.card(image,'COFFEE  $3',(w*.57,h*.12,w*.94,h*.20),size=24 if self.fmt=='short' else 30)
+            self.card(image,'COFFEE  $3',(w*.59,h*.64,w*.94,h*.70),size=24 if self.fmt=='short' else 30)
             self.rect(image,(w*.55,h*.54,w*.97,h*.62),'#76513c')
             self.rect(image,(w*.57,h*.62,w*.95,horizon+30),'#a16e4c')
             self.rect(image,(w*.08,h*.16,w*.34,h*.43),'#b8d4cd' if scene=='morning' else '#3c4e60')
@@ -174,22 +174,24 @@ class Film:
                 for row in range(4):
                     for col in range(2):
                         self.rect(image,(x+14+col*w*.045,horizon-height+20+row*34,x+30+col*w*.045,horizon-height+36+row*34),'#e7cfa1')
-        elif scene in {'jet','flight','balance72'}:
+        elif scene in {'jet','flight','balance72','stop-souvenir'}:
             self.rect(image,(0,h*.20,w,horizon),'#afced0')
             for x in [w*.15,w*.55,w*.85]:
                 d.ellipse((x-90,h*.28,x+100,h*.34),fill='#f1e9d2')
             self.rect(image,(0,horizon,w,h),'#8a9290')
             d.line((0,h*.85,w,h*.83),fill='#e7cf8e',width=8)
+        elif scene=='return':
+            pass
         else:
             # Apartment retains the approved tactile background, without foreground clutter.
-            room=self.floor.resize((w,h)) if self.fmt=='short' else self.floor.crop((0,0,self.floor.width,int(self.floor.width*9/16))).resize((w,h))
+            room=self.floor.resize((w,h)) if self.fmt=='short' else self.floor.crop((0,int(self.floor.height*.45),self.floor.width,int(self.floor.height*.45)+int(self.floor.width*9/16))).resize((w,h))
             image=self.Image.blend(image,room,.63)
         self.cache[scene]=image.copy()
         return image
 
     def character(self,image,t,scene,shot_age):
         # Draw each articulated pose once; reuse bounded 12fps gesture frames.
-        worried=scene in {'cup','stop','three','countdown','alone'}
+        worried=scene in {'cup','stop','stop-souvenir','three','countdown','alone'}
         angry=scene in {'rules','house','car','jewel','no-tip'}
         head=1 if worried else (2 if angry else 0)
         frame=int(t*12);key=(scene,frame%96)
@@ -231,7 +233,7 @@ class Film:
         if scene in {'offer','reward','balance72','three','zero','winner','countdown'}:
             value={'offer':'$100,000,000','reward':'WIN $1 BILLION','balance72':'$72,000,000','three':'$3 LEFT','zero':'$0 LEFT','winner':'$1,000,000,000','countdown':'00:07'}[scene]
             # Big balance at top, leaving character and captions clear.
-            self.card(image,value,(w*.08,h*.225,w*.92,h*.315),'#f4d78f' if scene not in {'zero','winner'} else '#b9d5b1',34 if self.fmt=='short' else 48)
+            self.card(image,value,(w*(.08 if self.fmt=='short' else .44),h*.225,w*.94,h*.315),'#f4d78f' if scene not in {'zero','winner'} else '#b9d5b1',34 if self.fmt=='short' else 48)
             if scene in {'zero','winner'}:
                 label('KEEP NOTHING',105*s,size=22)
             else:
@@ -292,12 +294,12 @@ class Film:
                 for i in range(3):
                     xx=cx-35*s+i*30*s
                     d.arc((xx-10*s,cy-120*s-8*math.sin(age*3+i),xx+13*s,cy-65*s),90,270,fill='#e9e7d8',width=4)
-            if scene=='mug':self.card(image,'CAFE OWNS THE MUG',(w*.09,h*.225,w*.91,h*.31),size=28 if self.fmt=='short' else 38)
-        elif scene in {'return','souvenir','no-tip'}:
-            label({'return':'RENTED. RETURNED.','souvenir':'SOUVENIR?','no-tip':'NO TIPS = NO GIFTS'}[scene],size=20)
+            if scene=='mug':self.card(image,'CAFE OWNS THE MUG',(w*(.09 if self.fmt=='short' else .43),h*.225,w*.94,h*.31),size=28 if self.fmt=='short' else 30)
+        elif scene in {'return','souvenir','stop-souvenir','no-tip'}:
+            label({'return':'RENTED. RETURNED.','souvenir':'SOUVENIR?','stop-souvenir':'SOUVENIR?','no-tip':'NO TIPS = NO GIFTS'}[scene],size=20)
         elif scene in {'idea','reaction','run','cafe'}:
             label({'idea':'BUY EXPERIENCES','reaction':'READ THE RULES','run':'00:59','cafe':'$3 LEFT'}[scene],size=22)
-        if scene in {'house','car','jewel','souvenir','no-tip','stop'}:
+        if scene in {'house','car','jewel','souvenir','stop-souvenir','no-tip','stop'}:
             # Animated paper cross makes the ownership trap unambiguous.
             pop=ease(age/.28)
             self.Draw.Draw(image).line((cx-100*s,cy-110*s,cx-100*s+200*s*pop,cy-110*s+220*s*pop),fill='#bf593d',width=12)
@@ -368,15 +370,36 @@ def long_mix(voice,out,seconds,shots):
     return target
 
 
+def media_report(path,decode=False):
+    cloud_only()
+    args=['ffmpeg','-hide_banner','-nostdin','-xerror','-i',str(path)]
+    if not decode:args+=['-t','0']
+    args+=['-map','0:v?','-map','0:a?','-f','null','-']
+    result=subprocess.run(args,capture_output=True,text=True,check=True)
+    report=result.stderr.split('Output #0,')[0]
+    match=re.search(r'Duration: (\d+):(\d+):(\d+\.\d+)',report)
+    if not match:raise RuntimeError('FFmpeg did not report media duration')
+    hours,minutes,seconds=map(float,match.groups())
+    return hours*3600+minutes*60+seconds,report
+
+
+def check_film_report(report,target):
+    videos=[line for line in report.splitlines() if 'Video:' in line]
+    audios=[line for line in report.splitlines() if 'Audio:' in line]
+    size=f'{target[0]}x{target[1]}'
+    if len(videos)!=1 or len(audios)!=1 or (not all(x in videos[0] for x in ['Video: h264','yuv420p']) or re.search(r'\b'+size+r'\b',videos[0]) is None or re.search(r'\b24 fps\b',videos[0]) is None) or 'Audio: aac' not in audios[0]:
+        raise RuntimeError('Unexpected decoded media streams')
+
+
 def main():
     cloud_only()
     from .github import GitHub
-    from .audio_auditions import duration,command
+    from .audio_auditions import command
     fmt=os.environ.get('FILM_FORMAT','short')
     if fmt not in {'short','long'}:raise ValueError('Unknown film format')
     gh=GitHub();out=Path(f'build/spend100m-{fmt}');out.mkdir(parents=True,exist_ok=True)
     voice,timeline=source_audio(gh,out,fmt)
-    seconds=duration(voice)
+    seconds,_=media_report(voice)
     film=Film(fmt,timeline,seconds)
     write_json(out/'shot-plan.json',film.shots);write_json(out/'captions.json',film.caps)
     (out/'captions.srt').write_text('\n\n'.join(f'{i+1}\n{srt_time(c["start"])} --> {srt_time(c["end"])}\n{c["text"]}' for i,c in enumerate(film.caps))+'\n',encoding='utf-8')
@@ -414,11 +437,10 @@ def main():
             if proc.wait()!=0:raise RuntimeError('Cloud render failed')
         except BaseException:
             proc.kill();raise
-    probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(video)]))
-    vs=next(s for s in probe['streams'] if s['codec_type']=='video');au=next(s for s in probe['streams'] if s['codec_type']=='audio')
-    if (vs['width'],vs['height'],vs['codec_name'],vs['pix_fmt'],vs['r_frame_rate'])!=(*target,'h264','yuv420p','24/1') or au['codec_name']!='aac':raise RuntimeError('Unexpected media streams')
-    if abs(float(probe['format']['duration'])-seconds)>.20:raise RuntimeError('Narration ending truncated')
-    command(['ffmpeg','-v','error','-i',str(video),'-f','null','-'])
+    actual_seconds,report=media_report(video,decode=True)
+    check_film_report(report,target)
+    if abs(actual_seconds-seconds)>.20:raise RuntimeError('Narration ending truncated')
+    (out/'cloud-decoder-report.txt').write_text(report,encoding='utf-8')
     manifest={'episode':'spend-100m-in-one-day','format':fmt,'seconds':seconds,'width':target[0],'height':target[1],
         'fps':24,'distinct_animation_poses_per_second':12,'shots':len(film.shots),'source_commit':os.environ['GITHUB_SHA'],
         'audio_source_commit':AUDIO_COMMIT,'audio_source_sha256':digest(voice),'video_sha256':digest(video),
@@ -430,7 +452,7 @@ def main():
         'UNPUBLISHED OWNER REVIEW. Complete fictional paper-cutout film.\n\nNo YouTube upload or publication approval.\n\n'
         f'Format: {fmt}. Duration: {seconds:.2f}s. Shots: {len(film.shots)}.\n\nVideo SHA256: `{digest(video)}`.\n\n'
         'Narration reuses the owner-approved exact audio. Captions use native token timing estimates. Review the MP4, not only the contact sheet.')
-    for file in [video,out/'review.jpg',out/'poster.jpg',out/'captions.srt',out/'shot-plan.json',out/'captions.json',out/'manifest.json']:gh.upload(release,file)
+    for file in [video,out/'review.jpg',out/'poster.jpg',out/'captions.srt',out/'shot-plan.json',out/'captions.json',out/'manifest.json',out/'cloud-decoder-report.txt']:gh.upload(release,file)
     with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(f'## {fmt.title()} paper film\n\n[Open unpublished film]({release["html_url"]})\n\n{seconds:.2f} seconds. {len(film.shots)} narrative shots.\n')
     print('FILM_REVIEW_URL='+release['html_url'],flush=True)
 
