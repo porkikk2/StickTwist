@@ -1,0 +1,49 @@
+name: Spend 100m paper films
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: Production stage
+        type: choice
+        options: [boards, render]
+        default: boards
+      format:
+        description: Film format
+        type: choice
+        options: [short, long, both]
+        default: both
+permissions:
+  contents: write
+concurrency:
+  group: sticktwist-spend-films
+  cancel-in-progress: false
+jobs:
+  film:
+    if: >-
+      github.actor == github.repository_owner &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.visibility == 'public'
+    strategy:
+      fail-fast: false
+      matrix:
+        format: ${{ fromJSON(inputs.format == 'both' && '["short","long"]' || format('["{0}"]', inputs.format)) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -v
+      - name: Install free cloud media tools
+        run: |
+          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-dejavu-core libsndfile1
+          python -m pip install Pillow==11.3.0 numpy==2.2.6 soundfile==0.13.1
+      - name: Build owner-review paper film in cloud
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FILM_FORMAT: ${{ matrix.format }}
+          FILM_STAGE: ${{ inputs.stage }}
+        run: python -u -m sticktwist.spend_movie
