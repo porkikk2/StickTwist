@@ -1,6 +1,6 @@
 # StickTwist
 
-**Production update:** paper-cutout style 5 is approved. Voice/sound auditions and new story pitches are in preparation; both Shorts and 5–8-minute widescreen stories are planned. See [new direction](editorial/DIRECTION.uk.md). Legacy scheduled rendering is paused unless `LEGACY_RENDER_ENABLED=true`. The full paper-style renderer for both formats is not integrated yet; the approved visual proof is the eight-second motion test.
+**Production update:** paper-cutout style 5 is approved. Voice option 1 (am_michael) and the Spend $100m in one day premise are owner-selected. Narrated script drafts for Shorts and a 5–8-minute widescreen story are in preparation; music and publication remain unapproved. See [new direction](editorial/DIRECTION.uk.md). Legacy scheduled rendering is paused unless `LEGACY_RENDER_ENABLED=true`. The full paper-style renderer for both formats is not integrated yet; the approved visual proof is the eight-second motion test.
 
 Original English fictional stories, animated with procedural 2D stickmen. Cloud-only rendering, a five-story weekly queue, and explicit owner approval before every YouTube upload.
 
