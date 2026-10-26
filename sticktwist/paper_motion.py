@@ -156,7 +156,7 @@ class PaperStage:
         angle=math.degrees(math.atan2(b[0]-a[0],b[1]-a[1]))
         self.paste(canvas,index,((a[0]+b[0])/2,(a[1]+b[1])/2),width,length+5,angle)
 
-    def puppet(self,canvas,pose,hero=True,t=0):
+    def puppet(self,canvas,pose,hero=True,t=0,props=True):
         from PIL import ImageDraw
         x,y=pose['x'],pose['y']
         d=ImageDraw.Draw(canvas)
@@ -187,7 +187,7 @@ class PaperStage:
         self.segment(canvas,8,(x,y+59),(x,y+106),18)
         self.paste(canvas,3 if hero else 7,(x,y+170),109,163,pose['torso_angle'])
         self.paste(canvas,pose['head'],(x,y),163,163,pose['head_angle'])
-        if not hero:
+        if not hero and props:
             left=(x+pose['left_hand'][0],y+pose['left_hand'][1])
             right=(x+pose['right_hand'][0],y+pose['right_hand'][1])
             self.paste(canvas,14,(left[0],left[1]-33),96,100,angle=-8+3*math.sin(t*4))
@@ -259,21 +259,21 @@ def main():
         raise RuntimeError('Unexpected test video format or duration')
     write_json(out/'motion-checks.json',{'duration_seconds':float(probe['format']['duration']),
         'frames':FPS*SECONDS,'fps':FPS,'source_commit':os.environ['GITHUB_SHA'],
-        'video_sha256':digest(video),'audio':'none — visual movement study only',
+        'video_sha256':digest(video),'audio':'none â€” visual movement study only',
         'motion':['two-bone arm/leg joints','foot lift and walking cycle','three hero expressions',
                   'guilty friend reaction','separate console and banknotes','four camera cuts'],
         'assets':{f:digest(ASSETS/f) for f in ['room-clear.png','puppet-atlas.png']}})
     gh=GitHub()
     tag=f'paper-motion-{os.environ["GITHUB_RUN_ID"]}-{os.environ["GITHUB_RUN_ATTEMPT"]}'
-    release=gh.draft(tag,'StickTwist — style 5 / 8-second movement test',
-        'UNPUBLISHED DRAFT — visual movement test only, no audio, no YouTube upload.\n\n'
+    release=gh.draft(tag,'StickTwist â€” style 5 / 8-second movement test',
+        'UNPUBLISHED DRAFT â€” visual movement test only, no audio, no YouTube upload.\n\n'
         'Paper puppet joints, walk, reaction and camera cuts. Not a completed story.\n\n'
         f'Video SHA256: `{digest(video)}`.\n\n'
         'Watch the MP4 before judging the movement; a contact sheet only shows selected poses.')
     for name in ['StickTwist-paper-motion-test.mp4','paper-motion-contact.jpg','paper-motion-poster.jpg','motion-checks.json']:
         gh.upload(release,out/name)
     with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as s:
-        s.write(f'## Paper cutout motion study\n\n8 seconds, 1080×1920, 24 fps. Silent.\n\n'
+        s.write(f'## Paper cutout motion study\n\n8 seconds, 1080Ã—1920, 24 fps. Silent.\n\n'
                 f'[Open unpublished preview]({release["html_url"]})\n\nVideo SHA256: `{digest(video)}`\n')
     print('REVIEW_ONLY_URL='+release['html_url'])
     print('VIDEO_SHA256='+digest(video))
