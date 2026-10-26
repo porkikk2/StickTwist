@@ -6,7 +6,7 @@
   "voice": "am_michael",
   "voice_owner_approved": true,
   "premise_owner_selected": true,
-  "finished_script_owner_approved": false,
+  "finished_script_owner_approved": true,
   "rules": {
     "budget_dollars": 100000000,
     "reward_dollars": 1000000000,
@@ -117,5 +117,6 @@
       }
     ],
     "word_count": 1034
-  }
+  },
+  "publishing_approved": false
 }
