@@ -2,7 +2,7 @@
   "style": "paper-cutout",
   "style_owner_approved": true,
   "voice_owner_approved": true,
-  "music_owner_approved": false,
+  "music_owner_approved": true,
   "stories_owner_approved": false,
   "budget_gbp": 0,
   "publishing": "explicit_owner_approval_per_exact_bundle",
@@ -35,11 +35,13 @@
     "long_videos_per_two_weeks": 1
   },
   "cadence_status": "planning_target_not_enabled_schedule",
-  "new_full_video_renderer_status": "paper_style_approved_voice_selected_current_story_in_script_and_audio_preproduction",
+  "new_full_video_renderer_status": "selected_episode_storyboard_and_cloud_render_in_progress",
   "legacy_scheduled_generation": "disabled_unless_LEGACY_RENDER_ENABLED_true",
   "selected_voice": "am_michael",
   "selected_voice_option": 1,
   "selected_premise": "spend-100m-in-one-day",
   "premise_owner_selected": true,
-  "finished_script_owner_approved": false
+  "finished_script_owner_approved": true,
+  "audio_draft_owner_approved": true,
+  "selected_episode_script_owner_approved": true
 }
